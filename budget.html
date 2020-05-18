@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="budget.css">
+	<title>Budget</title>
+</head>
+<body>
+
+	<!--Police d'écriture-->
+      <style>
+		    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+      </style>
+
+    <!--Barre de tâches-->
+
+        <!--Logo : bouton "home"-->
+        <div id="barre">
+            <!--Logo et nom du site-->
+            <a id="nom_site" href="accueil.html">
+                <img id="logo" src="images/logo web2.png"/>
+                <gf-specimen-header id="header"> Viamicis </gf-specimen-header>
+            </a>
+
+            <!--Menu déroulant qui permet l'accès à des pages d'informations-->
+            <div id="dropdown">
+                <button id="boutonmenuprincipal">Où, quand et comment partir?</button>
+                <div id="dropdown-child">
+                    <a href="periodeideal.html">Selon votre période</a>
+                    <a href="budget.html">Selon votre bugdet</a>
+                </div>
+            </div>
+
+            <!--Barre de recherche-->
+            <div id="box">
+                <form action="recherche.php" method="GET">
+                    <input id="texte_recherche" type="search" name="recherche" placeholder="Rechercher...">
+                    <button type="submit" id="bouton_recherche">
+                        <img id="icone_recherche" src="https://img.icons8.com/dotty/80/000000/search.png"/>
+                    </button>
+                </form>
+            </div>
+
+            <!--Bouton qui mène à la page de profil-->
+            <p id="profil"><a href="profil.php">Mon profil</a></p>
+
+            <!--Bouton qui mène à la page de deconnexion-->
+            <p id="deconnexion"> <a href="deconnexion.php">Déconnexion</a></p>
+        </div>
+
+        <!--Cadre central avec informations-->
+        <div id="carte">
+          <h1>Vous êtes perdu question budget?</h1>
+          <p>Sur la carte ci-dessous vous trouverez une idée des prix par jour de votre séjour dans tel ou tel pays.</p>
+          <img id="cartem"src="images/cartem.png">
+        </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Encodage-->
+    <meta charset="utf-8">
+    <!--Je sais pas c'est quoi-->
+    <meta name="viewport" content="width=device-width">
+    <!--Titre de l'onglet-->
+    <title>Viamicis - Votre tour du monde en un click</title>
+    <!--Lien vers le CSS-->
+    <link href="accueil.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+  	<!--Police d'écriture-->
+      <style>
+		    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+      </style>
+
+    <!--Barre de tâches-->
+
+<!--Barre de navigation-->
+    <div id="barre">
+      <!--Logo et nom du site-->
+      <a id="nom_site" href="accueil.html">
+          <img id="logo" src="images/logo web2.png"/>
+        <gf-specimen-header id="header"> Viamicis </gf-specimen-header>
+      </a>
+
+      <!--Menu déroulant qui permet l'accès à des pages d'informations-->
+        <div id="dropdown">
+          <button id="boutonmenuprincipal">Où, quand et comment partir?</button>
+            <div id="dropdown-child">
+              <a href="periodeideal.html">Selon votre période</a>
+              <a href="budget.html">Selon votre bugdet</a>
+            </div>
+        </div>
+
+      <!--Barre de recherche-->
+      <div id="box">
+        <form action="recherche.php" method="GET">
+          <input id="texte_recherche" type="search" name="recherche" placeholder="Rechercher...">
+          <button type="submit" id="bouton_recherche">
+            <img id="icone_recherche" src="https://img.icons8.com/dotty/80/000000/search.png"/>
+          </button>
+        </form>
+      </div>
+
+      <!--Bouton qui mène à la page de profil-->
+      <p id="profil"><a href="index.php">Se connecter</a></p>
+
+    </div>
+
+    <!--Cadre central-->
+    <div id="cadre_en_tete">
+	    <div id="en_tete">
+        <a id="nom_site" href="accueil.html">
+  	      <img id="logo" src="images/logo web2.png">
+  			  <gf-specimen-header id="header"> Viamicis </gf-specimen-header>
+        </a>
+		  </div>
+  		<p id="description_site">Organiser et plannifer vos envies de voyage avec vos amis</p>
+  		<!--Renvoi plus bas sur la carte-->
+  		<div id="lien_carte">
+  			<a href="index.php">Commencer votre voyage</a>	
+  		</div>
+	  </div>
+    <!--Pied de page-->
+    <div id=frise>
+      
+    </div>
+</body>
+</html>

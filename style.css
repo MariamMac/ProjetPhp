@@ -1,0 +1,732 @@
+/*Tout le document*/
+body{
+  font-family: 'Nunito', Arial, sans-serif;
+  margin : 0;
+  font-size : 16px;
+  color : rgb(0, 0, 64);
+  min-width: 520px;
+}
+
+/* NOTES
+-----Pour figer un élèment-----
+position: -webkit-sticky;
+position : sticky;
+top: 0;
+*/
+
+/* EN-TETE ACCUEIL---------------------------------------------------------------------------------*/
+/*BARRE MENU---------------A METTRE SUR CHAQUE PAGE---------------------------------------------------------------*/
+#barre {
+	position: -webkit-sticky;
+	position: sticky;
+	top : 0;
+	left : 0;
+	right : 0;
+	width : 100%;
+	height : 80px;
+	background-color: lightblue;
+}
+/*Le logo dans la barre*/
+#barre #logo {
+	position : absolute;
+	height: 60px;
+	width : 60px;
+	left : 5px;
+	top : 10px;
+}
+/*Nom du site*/
+#barre #header {
+	position : absolute;
+	height: 20px;
+	width : 50px;
+	left : 80px;
+	top : 27.5px;
+	font-size : 20px;
+	text-decoration: none;
+	color : rgb(0,0,64);
+}
+/*Différents en-tête de menu*/
+#barre .menu {
+	position : static;
+	top : 80px;
+	width : 100px;
+	background-color : rgb(0, 0, 64);
+	color : white;
+	/*Affichage au premier plan*/
+	z-index : 10;
+}
+
+
+/*Menu déroulant dans la barre de tâche*/
+#dropdown{
+    position: absolute;
+    float: left;
+    margin-left: 150px;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+/*Bouton principal du menu déroulant*/
+#boutonmenuprincipal{
+    position: absolute;
+    margin-left: 50px;
+    /*color: #666;*/
+    background-color: white;
+    color: rgb(0, 0, 64);
+    border: none;
+    cursor: pointer;
+    padding:5px;
+    top:120px 0px;
+    font-size: 15px;
+    font-family: 'Nunito', Arial, sans-serif;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/*Quand on passe sur le bouton principal du menu déroulant*/
+#boutonmenuprincipal:hover {
+    background-color: rgb(0, 0, 64);
+    color:white;
+}
+
+/*Sous-menu du menu déroulant*/
+#dropdown-child {
+    display: none;
+    background-color: rgb(0, 0, 64, 0.8);
+    min-width: 150px;
+    position: absolute;
+    z-index: 100;
+}
+
+/*Sous-menu du menu déroulant: liens*/
+#dropdown-child a{
+    color: white;
+    font-family: 'Nunito', Arial, sans-serif;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+#dropdown-child a:active{
+	color: rgb(0,0,64);
+}
+
+/*Affichage des sous-menu du menu déroulant*/
+#dropdown:hover #dropdown-child {
+    display: block;
+    margin-left: 50px;
+    border-radius: 10px;
+    width: 250px;
+    margin-top: 30px;
+    position: absolute;
+}
+#dropdown-child a:hover {
+	background-color: rgb(255,140,0);
+	border-radius : 10px;
+}
+
+/*Barre de recherche*/
+#box {
+	color : rgb(0, 0, 64);
+	position : absolute;
+	top : 45px;
+	left : 50%;
+	width : 250px;
+	height : 50px;
+	transform : translate(-50%,-50%);
+}
+/*Input*/
+#texte_recherche {
+	position : relative;
+	display : inline-block;
+	font-size : 16px;
+	box-sizing: border-box;
+	transition : 0.3s;
+}
+#texte_recherche[type="search"]{
+	width : 200px;
+	height : 40px;
+	border : none ;
+	outline : none;
+	padding : 0 25px;
+	border-radius : 25px 0 0 25px;
+}
+/*Bouton loupe*/
+#bouton_recherche {
+	width : 50px;
+	height: 40px;
+	top : 50px;
+	padding : 0;
+	margin : 0;
+	border-radius : 0 25px 25px 0;
+	border : none;
+	background-color: rgb(255,140,0);
+	float : right;
+}
+/*Image loupe*/
+#icone_recherche {
+	width : 35px;
+	height: 35px;
+	transition : 0.3s;
+}
+
+/*Survole de la souris*/
+#bouton_recherche:hover{
+	background-color: rgb(255,69,0);
+}
+
+/*Bouton d'accès à la page profil*/
+#profil {
+	float: right;
+	margin-right: 20px;
+	margin-top: 25px;
+	text-decoration: none;
+}
+
+/*Lien d'accès à la page profil*/
+#profil a, #deconnexion a {
+	text-decoration: none;
+	color: white;	
+}
+/*Bouton d'accès à la page deconnexion*/
+#deconnexion {
+	float: right;
+	margin-right: 20px;
+	margin-top: 25px;
+	color : white;
+	text-decoration: none;
+}
+#deconnexion:hover {
+	color : rgb(0,0,64);
+}
+
+/*--------------------------------------FIN---------------------------------------------------------*/
+
+/*LIEN VERS LA CARTE--------------------------------------------------------------------*/
+#lien_carte {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	width: 250px;
+	height : 100px;
+	line-height: 100px;
+	background-color: rgb(255,69,0);
+	text-align: center;
+	text-decoration: none;
+	border-radius: 45px;
+	border : 1px solid rgb(255,140,0);
+	transition: color 0.3s;
+	font-size : 20px;
+}
+#lien_carte:hover{
+	font-weight: bold 
+}
+
+/*RESULTATS RECHERCHE------------------------------------------------------------------*/
+/*Cadre contenant tout les résultats de la recherche*/
+#espace_result_recherche {
+	background-color: lighblue;
+	width: 90%;
+	margin-right : auto;
+	margin-left : auto;
+}
+
+/*Cadre de chaque résultat individuellement*/
+.result_recherche {
+	border : 1px solid rgb(0, 0, 64);
+	border-radius: 10px;
+	padding : 10px;
+	margin : 10px;
+	width : auto;
+	height: auto;
+	float: left;
+	text-align: center;
+	list-style-type: none;
+}
+
+
+/*Chaque caractéristique de la destination*/
+#lieu {
+	font-weight: bold;
+	font-size: 20px;
+}
+#ville {
+}
+
+#continent {
+	color : rgb(255,69,0);
+	font-style: italic;
+}
+/*La barre de séparation*/
+hr {
+	border-color: rgb(255,69,0);
+	font-size: 50px;
+	background-color: rgb(255,69,0);
+	height: 1px;
+}
+/*Encart avec les deux boutons dedans*/
+.encart_button_destination {
+	width : 100%px;
+	height: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top : 10px;
+	display : inline-block;
+}
+/*Bouton détails et ajouter*/
+.button-destination {
+	margin-top : 10px;
+	border-radius: 45px;
+	padding : 5px;
+	width : 120px;
+	height: 40px;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	float : left;
+	margin : 5px;
+}
+.button-destination:hover {
+	background-color: rgb(255,140,0);
+	font-weight: bold;
+}
+/*Like et dislike*/
+.like {
+	height : 50px;
+	width : 50px;
+	padding : 5px;
+}
+
+/*DETAIL DE LA DESTINATION-------------------------------------------------------------*/
+/*Le cadre de chaque destination*/
+#encart-detail {
+	border-radius: 10px;
+	width: 90%;
+	margin-right : auto;
+	margin-left : auto;
+	margin-top : 20px;
+	padding : 10px;
+}
+/*Le nom de la destination*/
+#nom_detail {
+
+}
+/*La ville*/
+#localisation_detail {
+	color : rgb(255,69,0);
+}
+/*La description du lieu*/
+#description_detail {
+
+}
+/*Le prix*/
+#prix_detail {
+	font-style: italic;
+}
+/*Image*/
+#image_detail {
+	height : 300px;
+}
+
+/*AJOUT D'UNE DESTINATION A UN VOYAGE--------------------------------------------------*/
+/*ajout.php - encart avec tous les voyages déjà existant de l'utilisateur*/
+#encart_voyage_existant {
+	width : 59%;
+	height : auto;
+	padding : none;
+	margin : none;
+	float : left;
+	display: inline-flex;
+}
+
+
+/*ajout.php - encart avec le bouton pour créer un nouveau voyage*/
+#encart_nouveau_voyage {
+	width : 40%;
+	border-left: 5px solid rgb(0,0,64);
+	margin : none; 
+	float : right;
+	display: inline-block;
+}
+
+/*Encart pour l'ajout d'une destination a un voyage*/
+#espace_user_voyage, #encart_choix_etape {
+	width: 90%;
+	margin-right : auto;
+	margin-left : auto;
+}
+#encart_choix_etape {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+/*ajout.php - bouton pour créer un nouveau voyage*/
+#button_nouveau_voyage {
+	border-radius: 45px;
+	margin : 10px;
+	width : 200px;
+	height: 40px;
+	text-align: center;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	float: right;
+}
+#button_nouveau_voyage:hover {
+	background-color: rgb(255,140,0);
+	font-weight: bold;
+}
+/*Bouton ajout de la destination au voyage*/
+.button_ajout_voyage {
+	margin-top : 10px;
+	margin-right : auto;
+	margin-left : auto;
+	border-radius: 45px;
+	padding : 10px;
+	width : auto;
+	height: auto;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	float : left;
+	margin : 5px;
+}
+.button_ajout_voyage:hover {
+	background-color: rgb(255,140,0);
+	font-weight: bold;
+}
+
+/*Formulaire dans choix_etape pour saisir les infos de l'étape*/
+.p_choix_etape {
+	font-size: 25px;
+	color : rgb(0, 0, 64);
+}
+.input_choix_etape{
+	font-size : 20px;
+	border : 1px solid rgb(0, 0, 64);
+	border-radius : 45px;
+	width: 300px;
+	padding : 15px;
+	color : rgb(0, 0, 64);
+	text-align: center;
+}
+#button_ajouter_etape {
+	margin : auto;
+	margin-top: 20px;
+	display: inline-block;
+	padding : 5px;
+	width: 250px;
+	border-radius: 45px;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	font-size: 20px;
+}
+#button_ajouter_etape:hover {
+	font-weight: bold;
+	transition : 0.3s;
+	border : none;
+}
+
+/*nouveau_voyage.php--------------------------------------------------------------------------------*/
+.button_ajouter_voyage {
+	margin : auto;
+	margin-top: 30px;
+	display: inline-block;
+	padding : 10px;
+	width: 250px;
+	border-radius: 45px;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	font-size: 20px;
+}
+
+.button_ajouter_voyage:hover {
+	font-weight: bold;
+	transition : 0.3s;
+	border : none;
+}
+/*Bouton pour créer les voyages*/
+#button_crea_voyage {
+	font-family: 'Nunito';
+	font-size : 30px;
+	width : 300px;
+	margin-top: 50px;
+	padding : 20px;
+	background-color: rgb(255,140,0);
+}
+#button_crea_voyage:hover {
+	background-color: rgb(0,0,64);
+	color : white;
+}
+/*div pour encadrer la confirmation lors de modification ou création (voyage, étape...)*/
+.encart_confirmation {
+	width : 90%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	text-align: center;
+}
+/*ENCART details_voyage.php ---------------------------------------------------------------------*/
+#encart_details_voyage {
+	width : 90%;
+	margin : auto;
+	margin-top : 20px;
+	margin-bottom: 20px;
+}
+/*Bouton pour accéder aux détails du voyage */
+.button_detail_voyage {
+	margin : auto;
+	margin-top: 10px;
+	display: inline-block;
+	padding : 10px;
+	width: 200px;
+	border-radius: 45px;
+	background-color: lightblue;
+	transition : 0.3s;
+	border : none;
+	line-height:40px;
+	text-align: center;
+}
+.button_detail_voyage a {
+	text-decoration: none;
+	color : rgb(0,0,64);
+}
+.button_detail_voyage:hover {
+	font-weight: bold;
+	transition : 0.3s;
+	border : none;
+}
+.list_activities {
+	text-align: left;
+	font-style: italic;
+}
+
+/*nouvel_activite.php------------------------------------------------------------------------------*/
+/*liste déroulante avec toutes les activités proposées*/
+#select_activity {
+	border-radius: 45px;
+	border : 1px solid rgb(0,0,64);
+	font-size : 20px;
+	width: 350px;
+	padding : 15px;
+	color : rgb(0, 0, 64);
+	text-align: center;
+	margin : 5px;
+}
+
+#select_activity option:hover {
+	background-color: rgb(255,140,0);
+}
+
+
+/*CONTENU PRINCIPAL---------------------------------------------------------------------------------*/
+#principal {
+	margin-left: auto;
+	margin-right: auto;
+	width : 75%;
+	padding-top : 90px;
+}
+/*Carte des continents------------------------carte.html---------------------------------------------*/
+#map {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	width : 75%;
+	height: 75%;
+	background-color: rgb(240,255,255);
+	box-shadow: 1px 1px 12px rgb(240,255,255);
+}
+/*Chaque continent*/
+#map path {
+	fill : rgb(0,0,64);
+	stroke : rgb(192,192,192);
+	stroke-width : 1px;
+	transition : fill 0.3s;
+}
+#map :hover {
+	fill : rgb(255,69,0);
+	stroke : rgb(0,0,64);
+	stroke-width : 1px;
+}
+
+ /*PIED DE PAGE ---------------------------------------------------------------------------------*/
+#pied_page {
+	text-align: center;
+	display: block;
+	background-color : rgb(255,69,0);
+	height : 400 px;
+}
+
+#pied_page p {
+	color : white;
+	position : relative;
+}
+
+/*Cadre-------*/
+#cadre {
+	display : block;
+	border : 1px solid rgb(0, 0, 64);
+	width : 80%;
+	margin : 20px ;
+	padding-left : 10px;
+	height : 150px;
+	position : relative;
+}
+
+#illu {
+	display: block;
+	width: 120px;
+	height: 120px;
+	margin-top : 15px;
+	margin-right : 10px;
+	background-color: rgb(255,69,0);
+	float : left;
+	position : relative;
+}
+
+
+/*FORMULAIRE D'INSCRIPTION---------------------------------------------------------------------------------*/
+#cadre_inscription h1 {
+	text-align : center;
+}
+#cadre_inscription form {
+	/* Uniquement centrer le formulaire sur la page */
+	margin: 0 auto;
+	width: 500px;
+	/* Encadré pour voir les limites du formulaire */
+	padding: 1em;
+	border: 1px solid rgb(255,69,0);
+	border-radius: 1em;
+	background-color : black;
+	color : white;
+}
+
+#cadre_inscription form div + div {
+	margin-top: 1em;
+}
+
+#cadre_inscription label {
+	/* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	height : 30px;
+}
+
+#cadre_inscription input, textarea {
+	/* Pour s'assurer que tous les champs texte ont la même police.
+	 Par défaut, les textarea ont une police monospace */
+	font: 1em sans-serif;
+
+	/* Pour que tous les champs texte aient la même dimension */
+	width: 250px;
+	box-sizing: border-box;
+	height : 40px;
+
+	/* Pour harmoniser le look & feel des bordures des champs texte */
+	border: 1px solid rgb(255,69,0);
+	border-radius : 2em;
+}
+
+#cadre_inscription input:focus, textarea:focus {
+	/* Pour souligner légèrement les éléments actifs */
+	border-color: rgb(255,69,0);
+}
+
+#cadre_inscription textarea {
+  /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
+	vertical-align: top;
+
+  /* Pour donner assez de place pour écrire du texte */
+	height: 5em;
+}
+
+.button {
+  /* Pour placer le bouton à la même position que les champs texte */
+	padding-left: 90px; /* même taille que les étiquettes */
+	
+}
+
+#cadre_inscription button {
+  /* Cette marge supplémentaire représente grosso modo le même espace que celui
+     entre les étiquettes et les champs texte */
+	margin-left: .5em;
+	width : 100px;
+	border : none;
+	background-color : white;
+	border: none;
+	color: black;
+	padding: 10px 10px;		/*haut et bas + gauche*/
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius : 2em;
+	margin-left : 50%;
+}
+
+/*Passage de la souris sur le bouton*/
+.button :hover{
+	border: 2px solid white;
+	background-color : black;
+	color : white;
+	font-weight : bold;
+}
+
+/*Texte area / encart de réponse*/
+#cadre_inscription form input {
+	color : rgb(255,69,0);
+	text-align : center;
+}
+
+#inscription_connexion > a {
+	text-decoration : none;
+	padding : 20px;
+	font-size : 10px;
+	color : white;
+}
+
+/*PRESENTATION---------------------------------------------------------------------------------*/
+a {
+	text-decoration : none;
+	color : black;
+}
+
+#illu_prez > h1 {
+	z-index : 10;
+	font-size : 30px;
+	margin-top : 200px;
+}
+
+#description_lieu {
+	padding-top : 10px;
+	display : block;
+	width : 90%;
+	margin : auto;
+}
+
+#illu_prez {
+	display: block;
+	width: 100%;
+	height: 300px;
+	margin  : auto;
+	margin-bottom : 20px;
+	background-color: rgb(255,69,0);
+	float : left;
+	position : relative;
+}
+
+/*Encart avec les continent*/
+#div_pays #cadre:hover {
+  background-color: rgb(190, 230, 163);
+  transition : background-color 0.3s;
+}
